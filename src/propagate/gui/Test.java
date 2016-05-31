@@ -109,10 +109,11 @@ public class Test extends JFrame {
             // This updates xn and creates the feedback loop:
             Operation.quot(sum, new Node(2), xn);
 
-            // The following doesn't make the UI reversible:
+            // The following doesn't make the UI reversible (as in, won't make it so
+            // changing xn with a sqrt updates x with its square):
             // Operation.prod(xn, xn, x);
             // This is because xn can be values which aren't even close to the
-            // square root of x yet.
+            // square root of x yet.  This likely causes an infinite loop.
 
             d.add(new JLabel("Square root test. "));
             d.add(new JLabel("x:"));
